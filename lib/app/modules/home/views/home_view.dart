@@ -7,12 +7,19 @@ import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
+
   @override
   Widget build(BuildContext context) {
-    if (controller.cameraController == null ||
-        !controller.cameraController!.value.isInitialized) {
-      return Container(); // Show a loading indicator or placeholder
-    }
-    return DeepArPreview(controller.deepArController!);
+    return Scaffold(
+      body: Obx(() {
+        if (!controller.isInitialized.value) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (controller.deepArController.value == null) {
+          return const Center(child: Text('Failed to initialize DeepAR'));
+        }
+        return DeepArPreview(controller.deepArController.value!);
+      }),
+    );
   }
 }

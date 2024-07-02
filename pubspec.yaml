@@ -20,4 +20,9 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+  assets:
+    - assets/
+    - assets/effects/
+    - assets/effects/burning_effect
+    - assets/effects/burning_effect.deepar
 
