@@ -10,6 +10,8 @@ dependencies:
   get: 4.6.6
   flutter: 
     sdk: flutter
+  deepar_flutter: ^0.0.5
+  camera: ^0.11.0+1
 
 dev_dependencies: 
   flutter_lints: 4.0.0
